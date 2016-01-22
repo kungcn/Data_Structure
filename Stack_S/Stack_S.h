@@ -1,5 +1,5 @@
-#define MAXSTACK 100
 #include <iostream>
+#define MAXSTACK 100
 using namespace std;
 
 enum ErrorCode {
