@@ -1,56 +1,70 @@
 #include "Stack_S.h"
 
-Stack_S::Stack_S() {
+template<class StackEntry>
+Stack_S<StackEntry>::Stack_S() {
     top = -1;
 }
 
-bool Stack_S::Empty() {
+template<class StackEntry>
+bool Stack_S<StackEntry>::Empty() {
     return (top == -1);
 }
 
-bool Stack_S::Full() {
+template<class StackEntry>
+bool Stack_S<StackEntry>::Full() {
     return (top == MAXSTACK - 1);
 }
 
-void Stack_S::Clear() {
+template<class StackEntry>
+void Stack_S<StackEntry>::Clear() {
     top = -1;
 }
 
-int Stack_S::GetCount() {
+template<class StackEntry>
+int Stack_S<StackEntry>::GetCount() {
     return top + 1;
 }
 
-ErrorCode Stack_S::Push(const int & Item) {
+template<class StackEntry>
+ErrorCode Stack_S<StackEntry>::Push(const StackEntry & Item) {
     if (Full())
         return Overflow;
+    
     Entry[top + 1] = Item;
     top++;
     return Success;
 }
 
-ErrorCode Stack_S::Top(int & Item) {
+template<class StackEntry>
+ErrorCode Stack_S<StackEntry>::Top(StackEntry & Item) {
     if (Empty())
         return Underflow;
+    
     Item = Entry[top];
     return Success;
 }
 
-ErrorCode Stack_S::Pop() {
+template<class StackEntry>
+ErrorCode Stack_S<StackEntry>::Pop() {
     if (Empty())
         return Underflow;
+    
     top--;
     return Success;
 }
 
-ErrorCode Stack_S::Pop(int & Item) {
+template<class StackEntry>
+ErrorCode Stack_S<StackEntry>::Pop(StackEntry & Item) {
     if (Empty())
         return Underflow;
+    
     Top(Item);
     Pop();
     return Success;
 }
 
-void Stack_S::Display() {
+template<class StackEntry>
+void Stack_S<StackEntry>::Display() {
     for (int i = 0; i < GetCount(); i++)
         cout << Entry[i] << endl;
 }

@@ -8,8 +8,9 @@ enum ErrorCode {
     Overflow
 };
 
-typedef int StackEntry;
+//typedef int StackEntry;
 
+template<class StackEntry>
 class Stack_S {
     public:
         Stack_S();
@@ -26,4 +27,3 @@ class Stack_S {
         int top;  //  record the position of the top entry
         StackEntry Entry[MAXSTACK];
 };
-
