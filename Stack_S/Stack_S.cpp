@@ -29,6 +29,7 @@ template<class StackEntry>
 ErrorCode Stack_S<StackEntry>::Push(const StackEntry & Item) {
     if (Full())
         return Overflow;
+    
     Entry[top + 1] = Item;
     top++;
     return Success;
@@ -38,6 +39,7 @@ template<class StackEntry>
 ErrorCode Stack_S<StackEntry>::Top(StackEntry & Item) {
     if (Empty())
         return Underflow;
+    
     Item = Entry[top];
     return Success;
 }
@@ -46,6 +48,7 @@ template<class StackEntry>
 ErrorCode Stack_S<StackEntry>::Pop() {
     if (Empty())
         return Underflow;
+    
     top--;
     return Success;
 }
@@ -54,6 +57,7 @@ template<class StackEntry>
 ErrorCode Stack_S<StackEntry>::Pop(StackEntry & Item) {
     if (Empty())
         return Underflow;
+    
     Top(Item);
     Pop();
     return Success;
