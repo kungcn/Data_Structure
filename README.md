@@ -15,5 +15,10 @@ Sad about my data structure exam on cyclic queue, so do it after I realize it.
 --> Data_Structure
 
 ----> Queue_C: achieve queue with cyclic array. (Therefore, Queue_D doesn't exist.)
+
+----> Queue_Stack: achieve queue with two stacks but here I just use STL to do it. It'd be better if I use the stack class written by myself.
 ## UI
 try to finish it after finishing all data structures I have learned.
+
+## Forget to commit day
+1. 2016.01.25 忘记更新
